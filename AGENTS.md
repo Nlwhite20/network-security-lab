@@ -10,8 +10,10 @@ This repository supports an authorized personal home-lab project only.
   `wazuh-siem` only, each confirmed by hostname at run time. TCP connect scan
   (`nmap -sT -p- -T3 --reason`), no root, no scripts (`-sC`/`--script`), no OS or
   version probing, no UDP, no other addresses. Any change to this scope needs my approval first.
-- The only traffic sent outside the lab is Suricata's standard test page
-  (`http://testmynids.org/uid/index.html`), fetched once per test.
+- Known-alert test stays inside the lab: the Mac serves a text file containing
+  `uid=0(root)` on the UTM network address only (temporary server, port 8080), and the
+  sensor fetches it once (signature 2100498). Changed 2026-10-06 (approved) because
+  `testmynids.org` did not resolve. No other traffic is sent outside the lab except package downloads.
 
 ## Required Approval
 
