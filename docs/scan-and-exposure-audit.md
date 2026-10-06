@@ -51,7 +51,13 @@ agent event and enrollment ports.
 | ET SCAN Suspicious inbound to Oracle SQL port 1521 | 1 | 1 |
 | ET SCAN Suspicious inbound to PostgreSQL port 5432 | 1 | 1 |
 
-5 of 5 Suricata alerts reached Wazuh. A full TCP connect scan of 65,535 ports raised only
+5 of 5 Suricata alerts reached Wazuh (later matched one-to-one on `flow_id`, signature ID,
+direction and timestamp in wazuh-siem-lab
+[Investigation 001](https://github.com/Nlwhite20/wazuh-siem-lab/blob/main/docs/investigation-001-lab3-ids-alerts.md),
+which covers seven alerts in total: these five scan alerts plus two from the known-alert test). About one minute after the
+scan, 14:32:01 to 14:32:25 UTC, the agent's event queue overflowed and reported that events may
+be lost. The five matched alerts were received before then; any events lost in that window
+cannot be listed, so this audit does not establish that collection was complete. A full TCP connect scan of 65,535 ports raised only
 these five port-specific signatures; the default ET Open rules did not raise a generic
 "port scan" alert. Run 2 (against the SIEM) was not visible to the sensor (see the
 visibility limitation in the README).
