@@ -1,0 +1,9 @@
+# Raw evidence stays on the lab VMs or outside Git
+evidence/
+*.pcap
+*.pcapng
+eve.json*
+*.log
+.env
+*.orig*
+.DS_Store
