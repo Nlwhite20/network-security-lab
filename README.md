@@ -16,7 +16,7 @@ the lab's exposed ports against what each repo documents.
 | Role | VM | Notes |
 | --- | --- | --- |
 | IDS sensor + Wazuh agent | `soc-endpoint-01` (Ubuntu 26.04 ARM64) | Suricata on `enp0s1`; Wazuh agent 002 reads `eve.json` |
-| SIEM | `wazuh-siem` | Wazuh 4.14.7 single-node (Lab 2) |
+| SIEM | `wazuh-siem` | Wazuh single-node (Lab 2): 4.14.7 during this lab, upgraded to 4.14.8 on 2026-10-13 |
 | Scanner | `ubuntu-mgmt` | nmap, scope fixed in [CLAUDE.md](CLAUDE.md) |
 
 **Limitation, stated up front:** UTM has no port mirroring. Suricata sees only
